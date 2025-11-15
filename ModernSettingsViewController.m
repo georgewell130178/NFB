@@ -678,7 +678,10 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionHeaderHeight = 50;
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-    [self.tableView registerClass:[ModernSettingsTableViewCell class] forCellReuseIdentifier:@"SettingsCell"];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
+    [self.tableView registerClass:[ModernSettingsTableViewCell class]
+           forCellReuseIdentifier:@"SettingsCell"];
     [self.view addSubview:self.tableView];
 }
 
@@ -1002,6 +1005,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 60;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.tableView registerClass:[ModernSettingsSimpleButtonCell class] forCellReuseIdentifier:@"SimpleButtonCell"];
@@ -1175,6 +1180,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.view addSubview:self.tableView];
@@ -1293,6 +1300,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.view addSubview:self.tableView];
@@ -1413,6 +1422,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.view addSubview:self.tableView];
@@ -1575,6 +1586,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.tableView registerClass:[ModernSettingsSimpleButtonCell class] forCellReuseIdentifier:@"SimpleButtonCell"];
@@ -1770,6 +1783,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
 
     [self.tableView registerClass:[ModernSettingsToggleCell class]
@@ -1916,6 +1931,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.tableView registerClass:[ModernSettingsTableViewCell class] forCellReuseIdentifier:@"ButtonCell"];
@@ -2114,6 +2131,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.tableView registerClass:[ModernSettingsTableViewCell class] forCellReuseIdentifier:@"ButtonCell"];
@@ -2379,6 +2398,8 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
     self.tableView.backgroundColor = [BHDimPalette currentBackgroundColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.estimatedRowHeight = 80;
     [self.tableView registerClass:[ModernSettingsToggleCell class] forCellReuseIdentifier:@"ToggleCell"];
     [self.tableView registerClass:[ModernSettingsTableViewCell class] forCellReuseIdentifier:@"ButtonCell"];
