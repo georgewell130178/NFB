@@ -286,10 +286,10 @@
 "APP_ICON_OTHER_HEADER_TITLE" = "Övrigt";
 
 /*Copy profile info*/
-"COPY_PROFILE_INFO_MENU_OPTION_1" = "Kopiera bio";
+"COPY_PROFILE_INFO_MENU_OPTION_1" = "Kopiera biografi";
 "COPY_PROFILE_INFO_MENU_OPTION_2" = "Kopiera användarnamn";
-"COPY_PROFILE_INFO_MENU_OPTION_3" = "Kopiera fullständigt användarnamn";
-"COPY_PROFILE_INFO_MENU_OPTION_4" = "Kopiera biolänk";
+"COPY_PROFILE_INFO_MENU_OPTION_3" = "Kopiera namn";
+"COPY_PROFILE_INFO_MENU_OPTION_4" = "Kopiera webbsida";
 "COPY_PROFILE_INFO_MENU_OPTION_5" = "Kopiera plats";
 
 /*Theme*/
