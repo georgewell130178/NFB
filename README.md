@@ -2,11 +2,7 @@
     <img src="icon_rounded.png" alt="NeoFreeBird-BHTwitter" width="130" height="130">
  
   # NeoFreeBird-BHTwitter (tweak)
-  <i>The brain behind NeoFreeBird (app)</i>
-
-  <p>
-   The ultimate way to tweak your Twitter/X experience.
-  </p>
+  <i>The ultimate way to tweak your Twitter/X experience.</i>
 </div>
 <br>
 
