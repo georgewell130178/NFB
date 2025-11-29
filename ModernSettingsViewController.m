@@ -772,7 +772,7 @@ static UIFont *TwitterChirpFont(TwitterFontStyle style) {
 - (void)setupDeveloperCells {
     self.developerCells = @[
         @{ @"title": @"aridan", @"username": @"actuallyaridan", @"avatarURL": @"https://unavatar.io/x/actuallyaridan?fallback=https://neofreebird.com/images/actuallyaridan.png", @"userID": @"1351218086649720837" },
-        @{ @"title": @"thea", @"username": @"theameoww", @"avatarURL": @"https://unavatar.io/github/nyathea?fallback=https://neofreebird.com/images/theameoww.png", @"userID": @"1479626241175175173" },
+        @{ @"title": @"Thea 🐾", @"username": @"nyaathea", @"avatarURL": @"https://unavatar.io/github/nyathea?fallback=https://neofreebird.com/images/theameoww.png", @"userID": @"1541742676009226241" },
         @{ @"title": @"timi2506", @"username": @"timi2506", @"avatarURL": @"https://unavatar.io/github/timi2506?fallback=https://neofreebird.com/images/timi2506.png", @"userID": @"1684856685486063616" }
     ];
     

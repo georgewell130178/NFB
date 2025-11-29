@@ -2955,6 +2955,7 @@ static BOOL BHNotifReplacePostWithTweetEnabled(void) {
     NSString *currentText = model.attributedString.string;
     NSMutableAttributedString *newString = nil;
     BOOL modified = NO;
+    BOOL textChanged = NO;
 
     // --- Tweet source label coloring ---
     if ([BHTManager RestoreTweetLabels] && tweetSources.count > 0) {
@@ -2980,6 +2981,7 @@ static BOOL BHNotifReplacePostWithTweetEnabled(void) {
                                           value:accentColor
                                           range:sourceRange];
                         modified = YES;
+                        // attributes only, textChanged stays NO
                     }
                 }
                 break; // Only color the first matching source
@@ -3080,26 +3082,27 @@ static BOOL BHNotifReplacePostWithTweetEnabled(void) {
         for (NSDictionary *rep in replacements) {
             NSString *oldStr = rep[@"old"];
             NSString *newStr = rep[@"new"];
-            if (oldStr.length == 0 || newStr.length == 0) continue;
+            if (oldStr.length == 0 || newStr.length == 0) {
+                continue;
+            }
 
-            // Search and replace repeatedly, preserving attributes
             NSRange searchRange = [[newString string] rangeOfString:oldStr];
             while (searchRange.location != NSNotFound) {
-                // Preserve the full attribute run covering the old text
                 NSRange runRange = {0, 0};
-                NSDictionary *attrs = [newString attributesAtIndex:searchRange.location effectiveRange:&runRange];
+                NSDictionary *attrs = [newString attributesAtIndex:searchRange.location
+                                                    effectiveRange:&runRange];
 
-                // Build attributed replacement with the same attributes
                 NSAttributedString *replacement =
                     [[NSAttributedString alloc] initWithString:newStr attributes:attrs];
 
-                // Replace with attributed string to keep layout-affecting attributes
                 [newString replaceCharactersInRange:searchRange withAttributedString:replacement];
                 modified = YES;
+                textChanged = YES;
 
-                // Continue searching after the inserted text
                 NSUInteger nextLocation = searchRange.location + replacement.length;
-                if (nextLocation >= newString.length) break;
+                if (nextLocation >= newString.length) {
+                    break;
+                }
 
                 NSRange remainder = NSMakeRange(nextLocation, newString.length - nextLocation);
                 searchRange = [[newString string] rangeOfString:oldStr options:0 range:remainder];
@@ -3109,15 +3112,20 @@ static BOOL BHNotifReplacePostWithTweetEnabled(void) {
 
     // --- Apply modifications if needed ---
     if (modified && newString) {
-        id outModel = model;
-        if ([model respondsToSelector:@selector(setAttributedString:)]) {
-            // Update in place to preserve any cached sizing metadata
+        if (textChanged) {
+            // Text changed, use a new model so length-related state is rebuilt
+            TFNAttributedTextModel *newModel =
+                [[%c(TFNAttributedTextModel) alloc] initWithAttributedString:newString];
+            %orig(newModel);
+        } else if ([model respondsToSelector:@selector(setAttributedString:)]) {
+            // Attributes only, keep model to preserve layout metadata
             [model setAttributedString:newString];
+            %orig(model);
         } else {
-            // Fallback: construct a new model from the updated string
-            outModel = [[%c(TFNAttributedTextModel) alloc] initWithAttributedString:newString];
+            TFNAttributedTextModel *newModel =
+                [[%c(TFNAttributedTextModel) alloc] initWithAttributedString:newString];
+            %orig(newModel);
         }
-        %orig(outModel);
     } else {
         %orig(model);
     }
